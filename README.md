@@ -8,7 +8,6 @@ In order to run the code you need to download the files and click on index.html 
 
 
 
-enjoy.
-
+have fun!
 
 
