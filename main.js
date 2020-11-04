@@ -1,17 +1,26 @@
 
 //this function add an item to the list while the user enter an to-do line to the list.
+var counter = 0;
+var task = "task_"+counter;
+
 function addItemToOrderList(){
+
     var list = document.getElementById('item-list');
     var firstItem = document.getElementsByClassName('addItem')[0].value;
     var deleteItemBtn = document.createElement('button'); //boton to clear line.
     var entry = document.createElement('li');
     var doneItem = document.createElement("INPUT"); //checkbox
 
-    entry.setAttribute("id", "task");
     entry.appendChild(document.createTextNode(firstItem));
 
-    deleteItemBtn.setAttribute("id", "del-line-btn");
-    deleteItemBtn.setAttribute('onclick','clearOneLine(1);');
+    task = "task_"+counter;
+    counter++;
+
+    entry.setAttribute("id", task);
+    deleteItemBtn.setAttribute("id", task);
+
+    deleteItemBtn.setAttribute('onclick','clearOneLine(this.id);');
+    console.log(deleteItemBtn.id);
 
     doneItem.setAttribute("type", "checkbox");//set the attributes to cheakitem by adding the input as an input type checkbox.
     doneItem.style.float = "right";
@@ -24,7 +33,7 @@ function addItemToOrderList(){
     entry.appendChild(deleteItemBtn);
     entry.appendChild(doneItem);
     list.appendChild(entry);
-    entry.style.display = "block";
+
 }
 
 
@@ -34,8 +43,8 @@ function clearAllTheList(){
     document.getElementById("item-list").innerHTML = "";
 }
 
-function clearOneLine(num){
+function clearOneLine(task){
     list = document.getElementById("item-list");
-    list.removeChild(list.childNodes[1]);
-    console.log(num);
+    var elem = document.getElementById(task);
+    list.removeChild(elem);
 }

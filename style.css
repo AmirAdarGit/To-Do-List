@@ -34,3 +34,13 @@ body {
     width: 10%;
     height: 60%;
 }
+
+#footer{
+    position: fixed;
+    width: 50%;
+    bottom: 10px; 
+    left: 10px;
+    float: left;
+    font-size: 10px;
+
+}
