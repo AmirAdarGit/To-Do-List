@@ -1,12 +1,20 @@
 
+let input = document.querySelector('input');
+input.addEventListener('keyup', function(e){
+    if(e.keyCode === 13){
+        document.getElementById("submit").click();
+    }     
+})
+
 //this function add an item to the list while the user enter an to-do line to the list.
 var counter = 0;
 var task = "task_"+counter;
 
 function addItemToOrderList(){
+    console.log("amir");
 
     var list = document.getElementById('item-list');
-    var firstItem = document.getElementsByClassName('addItem')[0].value;
+    var firstItem = document.getElementById('addItem').value;
     var deleteItemBtn = document.createElement('button'); //boton to clear line.
     var entry = document.createElement('li');
     var doneItem = document.createElement("INPUT"); //checkbox
@@ -20,7 +28,6 @@ function addItemToOrderList(){
     deleteItemBtn.setAttribute("id", task);
 
     deleteItemBtn.setAttribute('onclick','clearOneLine(this.id);');
-    console.log(deleteItemBtn.id);
 
     doneItem.setAttribute("type", "checkbox");//set the attributes to cheakitem by adding the input as an input type checkbox.
     doneItem.style.float = "right";
@@ -33,8 +40,8 @@ function addItemToOrderList(){
     entry.appendChild(deleteItemBtn);
     entry.appendChild(doneItem);
     list.appendChild(entry);
+    }
 
-}
 
 
 
