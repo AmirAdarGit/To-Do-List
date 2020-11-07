@@ -5,8 +5,9 @@
 }
 
 body {
+    background-color:darkslategray;
     display : flexbox;
-    border: 3px solid #73AD21;
+    /* border: 3px solid #73AD21; */
   }
 
 #center{
@@ -24,7 +25,6 @@ body {
     border: 3px solid #10aca4;
     font-size: 30px;
     display : flexbox;
- 
 }
 
 #submit #clear{

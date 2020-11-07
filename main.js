@@ -1,10 +1,12 @@
 
-//java script file//
 
+//this anonimuse function use to add an item while the user click on the "Enret" button on the keyboard/
 let input = document.querySelector('input');
 input.addEventListener('keyup', function(e){
     if(e.keyCode === 13){
-        document.getElementById("submit").click();
+        document.getElementById("submit").click();// fire the submit button
+        document.getElementById("addItem").value = ""; //clear the input bar after click "Enter"
+
     }     
 })
 
@@ -13,7 +15,7 @@ var counter = 0;
 var task = "task_"+counter;
 
 function addItemToOrderList(){
-    console.log("amir");
+    
 
     var list = document.getElementById('item-list');
     var firstItem = document.getElementById('addItem').value;
